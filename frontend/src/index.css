@@ -7,9 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.site-container {
+  min-height: 100vh;
+}
+
+main{
+  flex: 1;
+  margin: 0 5% 1% 5%;
+}
+
 header{
   background-color: #404040;
   padding: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 header a{
@@ -18,20 +29,41 @@ header a{
   text-decoration: none;
 }
 
+.heading{
+  text-align: center;
+}
+
+
 .products{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;  
+
 }
 
 .product{
-  border: 1px #404040 solid ;
+  margin: .25rem;
 }
 
 .product img{
   width: 100%;
+  max-width: 400px;
+  align-items: center;
 }
 
 .product-info{
   padding: 1rem;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.add-to-cart{
+  background-color: #ffa41c;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
 }
