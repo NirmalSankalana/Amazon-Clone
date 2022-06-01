@@ -1,8 +1,10 @@
-import React, { useEffect, useReducer, useState } from 'react'
-// import data from '../data'
+import React, { useEffect, useReducer} from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 import logger from 'use-reducer-logger';
+import { Col, Row } from 'react-bootstrap';
+
+import Product from '../components/Product';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -23,7 +25,7 @@ function HomeScreen() {
         loading: true,
         error: '',
     })
-    // const [products, setProducts] = useState([]);
+
     useEffect(() => {
         const fetchData = async () => {
             dispatch({ type: 'FETCH_REQUEST' })
@@ -34,34 +36,27 @@ function HomeScreen() {
                 dispatch({ type: 'FETCH_FAIL', payload: err.message });
 
             }
-            const results = await axios.get('/api/products');
-            // setProducts(results.data)
         }
         fetchData();
     }, [])
+
     return (
         <div className='product-container'>
-            <h1 className='heading'>Featured products</h1>
+            <h2 className='heading'>Featured products</h2>
             <div className="products">
                 {loading ? (
                     <div>Loading...</div>
                 ) : error ? (
                     <div>{error}</div>
                 ) : (
-                    products.map((product) => (
-                        <div className="product" key={product.slug}>
-                            <Link to={`/product/${product.slug}`}>
-                                <img src={product.image} alt={product.name} />
-                            </Link>
-                            <div className="product-info">
-                                <Link to={`/product/${product.slug}`} >
-                                    <p>{product.name}</p>
-                                </Link>
-                                <p><strong>${product.price}</strong></p>
-                                <button className='add-to-cart'>Add to Cart</button>
-                            </div>
-                        </div>
-                    )))}
+                    <Row>
+                    {products.map((product) => (
+                        <Col xsm={12} sm={6} md={4} lg={3} className='mb-3'>
+                            <Product product={product} />
+                        </Col>
+                    ))}
+                    </Row>
+                    )}
             </div>
         </div>
     )

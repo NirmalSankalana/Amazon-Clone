@@ -13,26 +13,7 @@ body {
 
 main{
   flex: 1;
-  margin: 0 5% 1% 5%;
 }
-
-header{
-  background-color: #404040;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-header a{
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.heading{
-  text-align: center;
-}
-
 
 .products{
   display: flex;
@@ -55,15 +36,20 @@ header a{
   padding: 1rem;
 }
 
+.rating span{
+  color: #ffc000;
+}
+
+.btn-primary{
+  background-color: #ffc000;
+  color: black;
+}
+
 a{
   text-decoration: none;
   cursor: pointer;
 }
 
 .add-to-cart{
-  background-color: #ffa41c;
-  padding: 0.75rem 1rem 0.75rem 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
   border: none;
 }
