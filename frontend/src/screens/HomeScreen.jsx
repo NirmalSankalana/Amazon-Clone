@@ -1,8 +1,9 @@
 import React, { useEffect, useReducer} from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import logger from 'use-reducer-logger';
 import { Col, Row } from 'react-bootstrap';
+import {Helmet} from 'react-helmet-async';
 
 import Product from '../components/Product';
 
@@ -42,7 +43,10 @@ function HomeScreen() {
 
     return (
         <div className='product-container'>
-            <h2 className='heading'>Featured products</h2>
+            <Helmet>
+                <title>Amazona</title>
+            </Helmet>
+            <h3 className='heading'>Featured products</h3>
             <div className="products">
                 {loading ? (
                     <div>Loading...</div>
