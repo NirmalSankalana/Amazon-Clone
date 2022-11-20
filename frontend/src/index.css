@@ -60,3 +60,7 @@ a{
  max-width: 500px;
   align-items: center;
 }
+
+.img-thumbnail{
+  height: 80px;
+}
