@@ -34,7 +34,9 @@ function Product(props) {
                 </Link>
                 <Rating rating={product.rating} numReviews={product.numReviews} />
                 <Card.Text><strong>${product.price}</strong></Card.Text>
-                <Button className='add-to-cart' onClick={() => addToCartHandler(product)}>Add to Cart</Button>
+                {product.countInStock === 0 ? <Button variant="light" disabled>Out of Stock</Button> :
+                    <Button variant="warning" onClick={() => addToCartHandler(product)}>Add to Cart</Button>}
+
             </Card.Body>
             <div className="product-info">
 
