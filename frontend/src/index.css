@@ -59,3 +59,9 @@ a{
 .img-thumbnail{
   height: 80px;
 }
+
+
+.signin-container{
+  max-width: 600px;
+  
+}
