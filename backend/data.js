@@ -1,6 +1,5 @@
-import bcrypt from "bcrypt";
-const saltRounds = 10;
-const salt = bcrypt.genSaltSync(saltRounds);
+import bcrypt from "bcryptjs";
+var salt = bcrypt.genSaltSync(10);
 const data = {
   users: [
     {
