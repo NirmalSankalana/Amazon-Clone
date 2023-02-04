@@ -21,7 +21,7 @@ userRouter.post(
         return;
       }
     }
-    res.status(401).send({ message: "Invalid email" });
+    res.status(401).send({ message: "Invalid email or Passowrd" });
   })
 );
 
