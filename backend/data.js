@@ -3,7 +3,7 @@ var salt = bcrypt.genSaltSync(10);
 const data = {
   users: [
     {
-      name: "Nirmal",
+      name: "R.A.N. Sankalana",
       email: "sankalana.nirmal@gmail.com",
       password: bcrypt.hashSync("azOLe@123", salt),
       isAdmin: true,

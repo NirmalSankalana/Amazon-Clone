@@ -10,6 +10,7 @@ import {
   NavDropdown,
   Navbar,
   NavbarBrand,
+  Placeholder,
 } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useContext } from "react";
@@ -20,6 +21,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { ToastContainer } from "react-toastify";
 import { ShippingAddressScreen } from "./screens/ShippingAddressScreen";
 import SignupScreen from "./screens/SignupScreen";
+import { PaymentMethodsScreen } from "./screens/PaymentMethodsScreen";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -28,6 +30,7 @@ function App() {
     ctxDispatch({ type: "USER_SIGNOUT" });
     localStorage.removeItem("userInfo");
     localStorage.removeItem("shippingAddress");
+    localStorage.removeItem("paymentMethod");
   };
   return (
     <div className="d-flex flex-column site-container">
@@ -86,6 +89,7 @@ function App() {
             <Route path="/signin" element={<SigninScreen />} />
             <Route path="/signup" element={<SignupScreen />} />
             <Route path="/shipping" element={<ShippingAddressScreen />} />
+            <Route path="/payment" element={<PaymentMethodsScreen />} />
           </Routes>
         </Container>
       </main>
