@@ -22,6 +22,7 @@ import { ToastContainer } from "react-toastify";
 import { ShippingAddressScreen } from "./screens/ShippingAddressScreen";
 import SignupScreen from "./screens/SignupScreen";
 import { PaymentMethodsScreen } from "./screens/PaymentMethodsScreen";
+import { PlaceOrderScreen } from "./screens/PlaceOrderScreen";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -90,6 +91,7 @@ function App() {
             <Route path="/signup" element={<SignupScreen />} />
             <Route path="/shipping" element={<ShippingAddressScreen />} />
             <Route path="/payment" element={<PaymentMethodsScreen />} />
+            <Route path="/placeorder" element={<PlaceOrderScreen />} />
           </Routes>
         </Container>
       </main>
